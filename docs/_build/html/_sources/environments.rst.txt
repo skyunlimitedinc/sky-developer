@@ -1,0 +1,5 @@
+Environments
+============
+
+There are two primary environments in which I do development work:
+PowerShell and WSL2. Or, in other words, Windows and Linux.
