@@ -41,6 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Important Directories" href="important-directories.html" />
     <link rel="prev" title="1. Environments" href="environments.html" /> 
 </head>
 
@@ -92,10 +93,12 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Art Dept Scripts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#sky-launcher">2.1. Sky Launcher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#indesign-scripts">2.2. InDesign Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">2.3. Acrobat Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acrobat-scripts">2.3. Acrobat Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#template-making-scripts">2.4. Template-Making Scripts</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="important-directories.html">3. Important Directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="templates.html">4. Templates</a></li>
 </ul>
 
             
@@ -169,10 +172,10 @@
 desktop program called “Sky Launcher” is run which determines which
 script is called as well as handling data in the database.</p>
 <div class="section" id="sky-launcher">
-<h2><span class="section-number">2.1. </span>Sky Launcher<a class="headerlink" href="#sky-launcher" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">2.1. </span>Sky Launcher<a class="headerlink" href="#sky-launcher" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/skyunlimitedinc/sky-launcher">Sky Launcher repo</a></p>
 <p>This is the Java program which calls the
-<a class="reference external" href="indesign-scripts">scripts</a>. It is written in Java 14 (I think)
+<a class="reference internal" href="#indesign-scripts"><span class="std std-ref">scripts</span></a>. It is written in Java 14 (I think)
 and is installed to individual PCs from the IT folder
 <code class="docutils literal notranslate"><span class="pre">Sky</span> <span class="pre">Programs</span></code>.</p>
 <p>It should not be necessary to maintain this further unless a glaring bug
@@ -182,32 +185,32 @@ with the Adobe apps (using updated UXP versions of the Proof and Output
 scripts) through Websockets.</p>
 </div>
 <div class="section" id="indesign-scripts">
-<h2><span class="section-number">2.2. </span>InDesign Scripts<a class="headerlink" href="#indesign-scripts" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">2.2. </span>InDesign Scripts<a class="headerlink" href="#indesign-scripts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/skyunlimitedinc/sky-artdept">Sky ArtDept repo</a></p>
-<p>There are two main scripts, <code class="docutils literal notranslate"><span class="pre">ProofJWin.jsx</span></code> and <code class="docutils literal notranslate"><span class="pre">OutputJWin.jsx</span></code>
+<p>There are two main scripts, <code class="file docutils literal notranslate"><span class="pre">ProofJWin.jsx</span></code> and <code class="file docutils literal notranslate"><span class="pre">OutputJWin.jsx</span></code>
 that handle the Proofing and Output tasks respectively. They are called
-by <a class="reference external" href="sky-launcher">Sky Launcher</a> through <code class="docutils literal notranslate"><span class="pre">Proof.vbs</span></code> and
-<code class="docutils literal notranslate"><span class="pre">Output.vbs</span></code>. They communicate with <a class="reference external" href="acrobat-scripts">Acrobat
-Scripts</a> by way of <code class="docutils literal notranslate"><span class="pre">CopyFile.vbs</span></code>,
-<code class="docutils literal notranslate"><span class="pre">GetCoverInfo.vbs</span></code>, <code class="docutils literal notranslate"><span class="pre">OpenPdf.vbs</span></code>, <code class="docutils literal notranslate"><span class="pre">PrintCsFiles.vbs</span></code>,
-<code class="docutils literal notranslate"><span class="pre">TestAndPrint.vbs</span></code>, and <code class="docutils literal notranslate"><span class="pre">UnlockCover.vbs</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">logging.jsxinc</span></code> is a customized version of a JavaScript library
+by <a class="reference internal" href="#sky-launcher"><span class="std std-ref">Sky Launcher</span></a> through <code class="file docutils literal notranslate"><span class="pre">Proof.vbs</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">Output.vbs</span></code>. They communicate with <a class="reference internal" href="#acrobat-scripts"><span class="std std-ref">Acrobat
+Scripts</span></a> by way of <code class="file docutils literal notranslate"><span class="pre">CopyFile.vbs</span></code>,
+<code class="file docutils literal notranslate"><span class="pre">GetCoverInfo.vbs</span></code>, <code class="file docutils literal notranslate"><span class="pre">OpenPdf.vbs</span></code>, <code class="file docutils literal notranslate"><span class="pre">PrintCsFiles.vbs</span></code>,
+<code class="file docutils literal notranslate"><span class="pre">TestAndPrint.vbs</span></code>, and <code class="file docutils literal notranslate"><span class="pre">UnlockCover.vbs</span></code>.</p>
+<p>The <code class="file docutils literal notranslate"><span class="pre">logging.jsxinc</span></code> is a customized version of a JavaScript library
 that allows for logging and is necessary for debugging the scripts. All
-logs are stored in <code class="docutils literal notranslate"><span class="pre">G:\\ArtDept\\Scripts\\sky-artdept\\logs</span></code> and
+logs are stored in <code class="file docutils literal notranslate"><span class="pre">G:\ArtDept\Scripts\sky-artdept\logs\</span></code> and
 sorted by computer, then by date. This is useful for tracking down bugs.
 Ask the user to reproduce the problem after they have turned on ‘debug
-log’ in <a class="reference external" href="sky-launcher">Sky Launcher</a>.</p>
+log’ in <a class="reference internal" href="#sky-launcher"><span class="std std-ref">Sky Launcher</span></a>.</p>
 </div>
-<div class="section" id="id3">
-<h2><span class="section-number">2.3. </span>Acrobat Scripts<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acrobat-scripts">
+<span id="id3"></span><h2><span class="section-number">2.3. </span>Acrobat Scripts<a class="headerlink" href="#acrobat-scripts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/skyunlimitedinc/acrobat">Acrobat Scripts repo</a></p>
 <p>All of the scripts necessary for Acrobat to run the way we need it to
-are stored in the <code class="docutils literal notranslate"><span class="pre">Adobe</span></code> IT Directory along with custom
+are stored in the <code class="file docutils literal notranslate"><span class="pre">Adobe</span></code> IT Directory along with custom
 stamps. These are installed during initial PC setup so please reference
-the <code class="docutils literal notranslate"><span class="pre">New-PC-Setup.md</span></code> document for more details.</p>
+the <code class="file docutils literal notranslate"><span class="pre">New-PC-Setup.md</span></code> document for more details.</p>
 </div>
 <div class="section" id="template-making-scripts">
-<h2><span class="section-number">2.4. </span>Template-Making Scripts<a class="headerlink" href="#template-making-scripts" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2><span class="section-number">2.4. </span>Template-Making Scripts<a class="headerlink" href="#template-making-scripts" title="Permalink to this headline">¶</a></h2>
 <p>There are several different scripts that I use to help make downloadable
 PDF templates and their associated thumbnails for the American Accents
 website. For each of these, please see the GitHub repo for more
@@ -229,6 +232,7 @@ instructions on how to use them.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="important-directories.html" class="btn btn-neutral float-right" title="3. Important Directories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="environments.html" class="btn btn-neutral float-left" title="1. Environments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

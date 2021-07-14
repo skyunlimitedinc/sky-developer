@@ -9,7 +9,7 @@ PowerShell
 
 This is just Windows, really. I use the PowerShell environment for
 working on anything that needs to run Adobe scripts, so that's mostly
-the ``adobe-scripts`` folder in ``%USERPROFILE%\Documents``.
+the :file:`adobe-scripts` folder in :file:`%USERPROFILE%\\Documents\\`.
 
 WSL2
 ----
