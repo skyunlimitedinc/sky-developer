@@ -12,7 +12,7 @@ Responsibilities and Instructions for the Developer
    :caption: Contents:
 
    environments
-   environments/powershell
+   art-dept-scripts
 
 
 Indices and tables
@@ -68,77 +68,6 @@ If the candidate does not have the knowledge of any one of the above
 technologies, they will need to train in them by watching LinkedIn
 Learning videos or by taking online courses.
 
-
-2. Art Dept Scripts
--------------------
-
-To handle the Proofing and Output tasks in the Art Department, a Java
-desktop program called "Sky Launcher" is run which determines which
-script is called as well as handling data in the database.
-
-2.1. Sky Launcher
-~~~~~~~~~~~~~~~~~
-
-`repo <https://github.com/skyunlimitedinc/sky-launcher>`__
-
-This is the Java program which calls the
-`scripts <#22-indesign-scripts>`__. It is written in Java 14 (I think)
-and is installed to individual PCs from the `IT folder <>`__
-```Sky Programs`` <>`__.
-
-It should not be necessary to maintain this further unless a glaring bug
-makes itself known or the database is moved. I had planned on eventually
-scrapping this in the future in favor of a Node.js app that communicates
-with the Adobe apps (using updated UXP versions of the Proof and Output
-scripts) through Websockets.
-
-2.2. InDesign Scripts
-~~~~~~~~~~~~~~~~~~~~~
-
-`repo <https://github.com/skyunlimitedinc/sky-artdept>`__
-
-There are two main scripts, ``ProofJWin.jsx`` and ``OutputJWin.jsx``
-that handle the Proofing and Output tasks respectively. They are called
-by `Sky Launcher <#21-sky-launcher>`__ through ``Proof.vbs`` and
-``Output.vbs``. They communicate with `Acrobat
-Scripts <#23-acrobat-scripts>`__ by way of ``CopyFile.vbs``,
-``GetCoverInfo.vbs``, ``OpenPdf.vbs``, ``PrintCsFiles.vbs``,
-``TestAndPrint.vbs``, and ``UnlockCover.vbs``.
-
-The ``logging.jsxinc`` is a customized version of a JavaScript library
-that allows for logging and is necessary for debugging the scripts. All
-logs are stored in `G:\\ArtDept\\Scripts\\sky-artdept\\logs <>`__ and
-sorted by computer, then by date. This is useful for tracking down bugs.
-Ask the user to reproduce the problem after they have turned on 'debug
-log' in `Sky Launcher <#21-sky-launcher>`__.
-
-2.3. Acrobat Scripts
-~~~~~~~~~~~~~~~~~~~~
-
-`repo <https://github.com/skyunlimitedinc/acrobat>`__
-
-All of the scripts necessary for Acrobat to run the way we need it to
-are stored in the ``Adobe`` `IT Directory <>`__ along with custom
-stamps. These are installed during initial PC setup so please reference
-the ``New-PC-Setup.md`` document for more details.
-
-2.4. Template-Making Scripts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-There are several different scripts that I use to help make downloadable
-PDF templates and their associated thumbnails for the American Accents
-website. For each of these, please see the GitHub repo for more
-instructions on how to use them.
-
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| Repository                                                                                           | Description                                                                                        |
-+======================================================================================================+====================================================================================================+
-| `create-downloadable-standard <https://github.com/skyunlimitedinc/create-downloadable-standard>`__   | Script for creating downloadable PDF files for the American Accents web site.                      |
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| `create-downloadable-shaped <https://github.com/skyunlimitedinc/create-downloadable-shaped>`__       | Generate downloadable PDF templates for shaped Zünd-cut items for the American Accents web site.   |
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| `create-downloadable-zund <https://github.com/skyunlimitedinc/create-downloadable-zund>`__           | Generate downloadable PDF templates for Zünd-cut items.                                            |
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
 
 3. Important Directories
 ------------------------
