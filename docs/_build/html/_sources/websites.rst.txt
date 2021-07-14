@@ -15,9 +15,15 @@ When/if any changes must be made to the AA, ACS, or AYS sites, be aware
 that I have a CD pipeline in place. Specifically, I have a GitHub Action
 set up on each of them so that they will automatically be uploaded to
 their respective live server anytime a :program:`git push` action is performed
-on the ``main`` branch of their repos. **This process is not perfect and
-can lead to website downtime if you are not careful with the changes you
-make to the site.** Be sure to test, test, and test some more before
+on the ``main`` branch of their repos.
+
+.. warning::
+
+    This process is not perfect and
+    can lead to website downtime if you are not careful with the changes you
+    make to the site.
+
+Be sure to test, test, and test some more before
 pushing! If you are at all unsure but need to push anyway, make sure to
 add ``[skip ci]`` to the comment of each commit you make. This will skip
 the GitHub Action that pushes the code up to the server. Better yet,

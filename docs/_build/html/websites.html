@@ -41,6 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. DevOps" href="devops.html" />
     <link rel="prev" title="4. Templates" href="templates.html" /> 
 </head>
 
@@ -114,6 +115,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#sky-schedule">5.3. Sky Schedule</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="devops.html">6. DevOps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact-me.html">7. Contact Me</a></li>
 </ul>
 
             
@@ -195,9 +198,14 @@ prefer to work under WSL when I can.</p>
 that I have a CD pipeline in place. Specifically, I have a GitHub Action
 set up on each of them so that they will automatically be uploaded to
 their respective live server anytime a <strong class="program">git push</strong> action is performed
-on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their repos. <strong>This process is not perfect and
+on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of their repos.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This process is not perfect and
 can lead to website downtime if you are not careful with the changes you
-make to the site.</strong> Be sure to test, test, and test some more before
+make to the site.</p>
+</div>
+<p>Be sure to test, test, and test some more before
 pushing! If you are at all unsure but need to push anyway, make sure to
 add <code class="docutils literal notranslate"><span class="pre">[skip</span> <span class="pre">ci]</span></code> to the comment of each commit you make. This will skip
 the GitHub Action that pushes the code up to the server. Better yet,
@@ -370,6 +378,7 @@ minor bug regarding the links to PDFs.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="devops.html" class="btn btn-neutral float-right" title="6. DevOps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="templates.html" class="btn btn-neutral float-left" title="4. Templates" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
