@@ -17,6 +17,7 @@ Responsibilities and Instructions for the Developer
    templates
    websites
    devops
+   contact-me
 
 
 Indices and tables
@@ -71,12 +72,3 @@ willing to learn:
 If the candidate does not have the knowledge of any one of the above
 technologies, they will need to train in them by watching LinkedIn
 Learning videos or by taking online courses.
-
-
-7. Contact Me
--------------
-
-When all else fails, you may `email me <chris@chrismcgee.info>`__ and we
-can negotiate how I can help. It will likely be in the form of an
-hourly-billed training session via phone call or, preferably, a Zoom
-call with a remote session.

@@ -29,5 +29,5 @@ Git and GitHub
 I have moved the GitHub repos for all of the Sky projects to
 `skyunlimitedinc <https://github.com/skyunlimitedinc>`__. However, I
 remain the sole contributor to them. Once a new developer has been
-established, please `contact me <contact-me.html>`__ and I can add their
+established, please :ref:`contact me<contact-me>` and I can add their
 GitHub account to those repos.
