@@ -19,7 +19,7 @@ Sub-system for Linux. It is currently at its 2nd iteration which
 includes an entire Linux kernel in Windows.
 
 I tend to prefer this environment because Linux is more geared for
-developers than Windows. In addition, `Ansible <#62-ansible>`__ doesn't
+developers than Windows. In addition, :ref:`ansible1` doesn't
 yet have a Windows executable, so all Ansible playbooks *must* be run
 from WSL2.
 
