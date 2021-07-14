@@ -72,7 +72,8 @@ Make note of the scaling values. I typically like to use whole numbers
 as much as possible to make this process easier.
 
 Paste in the imprint area onto the 'Art Work (max imprint)' layer and
-apply the :guilabel:`Art Frame` Object Style from :menuselection:`Window --> Styles --> Object Styles`
+apply the :guilabel:`Art Frame` Object Style from
+:menuselection:`Window --> Styles --> Object Styles`
 if it exists. If not, make the imprint area path with
 **no** fill and a '**NO PRINT BLACK!**' stroke at **0.5 pt** and using
 the **Dotted** stroke style. Lastly, with the path still selected, go to
@@ -80,7 +81,7 @@ the **Dotted** stroke style. Lastly, with the path still selected, go to
 other layers (e.g., a non-Digital product, or one that has been scaled
 on the first page), we need to create an InCopy file of the imprint
 area. So before copying it to other layers, right-click on the path and
-choose :guilabel:`InCopy` -> :guilabel:`Export to Selection…` from the context menu.
+choose :menuselection:`InCopy --> Export to Selection…` from the context menu.
 Navigate to the :file:`~\\Documents\\temp\\` folder and save it as :file:`art.icml`. If
 the product is two-sided, save it as :file:`art-front.icml` (or :file:`art-back.icml`,
 :file:`art-inside.icml`, :file:`art-outside.icml`, etc. Use your judgement). InDesign will
