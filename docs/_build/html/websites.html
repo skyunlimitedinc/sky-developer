@@ -212,7 +212,7 @@ the GitHub Action that pushes the code up to the server. Better yet,
 create a local branch and do all of your work there and test it before
 merging it back into <code class="docutils literal notranslate"><span class="pre">main</span></code> and pushing to upstream.</p>
 <div class="section" id="american-accents">
-<h2><span class="section-number">5.1. </span>American Accents<a class="headerlink" href="#american-accents" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">5.1. </span>American Accents<a class="headerlink" href="#american-accents" title="Permalink to this headline">¶</a></h2>
 <p>Until the AA WordPress site is fully operational, the old static
 HTML/CSS site must be maintained. Although it does have some PHP code to
 alleviate a great deal of repetitive code and manual management, it is
@@ -357,15 +357,24 @@ generated in <code class="file docutils literal notranslate"><span class="pre">c
 </div>
 </div>
 <div class="section" id="cabin-yacht">
-<h2><span class="section-number">5.2. </span>Cabin &amp; Yacht<a class="headerlink" href="#cabin-yacht" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2><span class="section-number">5.2. </span>Cabin &amp; Yacht<a class="headerlink" href="#cabin-yacht" title="Permalink to this headline">¶</a></h2>
+<p>Similar to <a class="reference internal" href="#sky-schedule"><span class="std std-ref">Sky Schedule</span></a>, this was built with
+<a class="reference external" href="https://laravel.com/">Laravel 8</a>. It uses
+<a class="reference external" href="https://voyager.devdojo.com/">Voyager</a> for the admin back-end.</p>
+<p>Unlike <a class="reference internal" href="#american-accents"><span class="std std-ref">American Accents</span></a>, these sites do not get updated every year.
+Thus, it is likely that these will not need to be dealt with until the new
+American Accents WordPress site is up and running. That plan as of this
+writing is that the Cabin and Yacht sites will follow the same structure
+and database as Accents.</p>
 </div>
 <div class="section" id="sky-schedule">
-<h2><span class="section-number">5.3. </span>Sky Schedule<a class="headerlink" href="#sky-schedule" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2><span class="section-number">5.3. </span>Sky Schedule<a class="headerlink" href="#sky-schedule" title="Permalink to this headline">¶</a></h2>
 <p>Sky Schedule is a web app running on our local <code class="docutils literal notranslate"><span class="pre">SkyUbuntu</span></code> server. It
 allows Sky employees to manage our orders. <a class="reference internal" href="art-dept-scripts.html#sky-launcher"><span class="std std-ref">Sky
 Launcher</span></a> communicates with the same database that Sky
 Schedule uses to keep all of the order info up to date.</p>
-<p>It is based on <a class="reference external" href="https://laravel.com/">Laravel 8</a> and uses the
+<p>Similar to <a class="reference internal" href="#cabin-yacht"><span class="std std-ref">Cabin &amp; Yacht</span></a>, it is based on
+<a class="reference external" href="https://laravel.com/">Laravel 8</a> and uses the
 <a class="reference external" href="https://keenthemes.com/metronic/">Metronic 5</a> admin theme. You
 should not need to update it any longer even though it currently has a
 minor bug regarding the links to PDFs.</p>

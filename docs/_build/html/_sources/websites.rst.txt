@@ -30,6 +30,8 @@ the GitHub Action that pushes the code up to the server. Better yet,
 create a local branch and do all of your work there and test it before
 merging it back into ``main`` and pushing to upstream.
 
+.. _american-accents:
+
 American Accents
 ----------------
 
@@ -199,8 +201,22 @@ A :file:`compliance_thumbnails.tif` file exists in the :file:`pdf/` root to
 create thumbnails for all of our compliances, both new and old. They are
 generated in :file:`compliance_thumbnails-assets`, predictably.
 
+.. _cabin-yacht:
+
 Cabin & Yacht
 -------------
+
+Similar to :ref:`sky-schedule`, this was built with
+`Laravel 8 <https://laravel.com/>`__. It uses
+`Voyager <https://voyager.devdojo.com/>`__ for the admin back-end.
+
+Unlike :ref:`american-accents`, these sites do not get updated every year.
+Thus, it is likely that these will not need to be dealt with until the new
+American Accents WordPress site is up and running. That plan as of this
+writing is that the Cabin and Yacht sites will follow the same structure
+and database as Accents.
+
+.. _sky-schedule:
 
 Sky Schedule
 ------------
@@ -210,7 +226,8 @@ allows Sky employees to manage our orders. :ref:`Sky
 Launcher<sky-launcher>` communicates with the same database that Sky
 Schedule uses to keep all of the order info up to date.
 
-It is based on `Laravel 8 <https://laravel.com/>`__ and uses the
+Similar to :ref:`cabin-yacht`, it is based on
+`Laravel 8 <https://laravel.com/>`__ and uses the
 `Metronic 5 <https://keenthemes.com/metronic/>`__ admin theme. You
 should not need to update it any longer even though it currently has a
 minor bug regarding the links to PDFs.
