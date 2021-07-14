@@ -18,10 +18,37 @@ Dev
 
 In here are most of my development projects and helpers. I had planned
 to incorporate :file:`~\\Sites\\` in here at some point, but
-that always got postponed. At any rate, here is what you can find under
-:file:`~\\dev\\`.
+that always got postponed.
 
-TODO: list here.
+.. note::
+
+    I have a similar directory under WSL: :file:`~/dev/`. I think I had
+    copied one to the other at some point. In any case, the two have now
+    diverged, but they still share many directories. Thus, there is
+    some confusion as to which has the 'proper' version of those duplicated
+    directories. Unfortunately, I cannot answer that.
+
+Here is what you can find under :file:`~\\dev\\`.
+
++---------------------------+---------------------------------------------------------------------------------+
+|         Directory         |                                     Purpose                                     |
++===========================+=================================================================================+
+| :file:`eclipse-workspace` | **DEPRECATED**. This is where all of the old, original Eclipse workspaces live. |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`Icons`             | Where the icons used for :ref:`sky-schedule` and :ref:`sky-launcher` live.      |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`Learning`          | Cloned repositories associated with tutorial videos and documents.              |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`projects`          | Main folder of my coding projects as well as tests and experiments.             |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`reference`         | Files and repositories that I use as references on my projects.                 |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`Text Files`        | Customized text files (and more) from Quikey. Used for testing purposes.        |
++---------------------------+---------------------------------------------------------------------------------+
+| :file:`Tools`             | Various tools downloaded or cloned that are necessary for some of my projects.  |
++---------------------------+---------------------------------------------------------------------------------+
+
+All other directories are probably just temporary or old and no longer necessary.
 
 Sites
 -----
