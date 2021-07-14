@@ -3,29 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Responsibilities and Instructions for the Developer
 ===================================================
-
-.. toctree::
-   :numbered:
-   :maxdepth: 2
-   :caption: Contents:
-
-   environments
-   art-dept-scripts
-   important-directories
-   templates
-   websites
-   devops
-   contact-me
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
 This document is just a rough outline of the various tasks that the
 on-site developer is expected to be able to accomplish. The following
@@ -72,3 +52,16 @@ willing to learn:
 If the candidate does not have the knowledge of any one of the above
 technologies, they will need to train in them by watching LinkedIn
 Learning videos or by taking online courses.
+
+
+.. toctree::
+   :numbered:
+   :caption: Contents:
+
+   environments
+   art-dept-scripts
+   important-directories
+   templates
+   websites
+   devops
+   contact-me
