@@ -20,6 +20,8 @@
 project = 'Sky Developer'
 copyright = '2021, Chris McGee'
 author = 'Chris McGee'
+version = '1'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
