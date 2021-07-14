@@ -44,7 +44,7 @@ alter them. We'll take care of that now.
 
 If there are any InCopy links in the template, now is a good time to
 sever those links. To do so, open the :guilabel:`Assignments` panel from
-:guilabel:`Window` -> :guilabel:`Editorial` -> :guilabel:`Assignments`. This is where all the
+:menuselection:`Window --> Editorial --> Assignments`. This is where all the
 InCopy links in the document are listed. Typically they are under
 :guilabel:`Unassigned InCopy Content`, so expand that tree in the panel. The links
 with names like :guilabel:`inks` and :guilabel:`header` are safe to leave alone, but the
@@ -72,11 +72,11 @@ Make note of the scaling values. I typically like to use whole numbers
 as much as possible to make this process easier.
 
 Paste in the imprint area onto the 'Art Work (max imprint)' layer and
-apply the :guilabel:`Art Frame` Object Style from :guilabel:`Window` -> :guilabel:`Styles` ->
-:guilabel:`Object Styles` if it exists. If not, make the imprint area path with
+apply the :guilabel:`Art Frame` Object Style from :menuselection:`Window --> Styles --> Object Styles`
+if it exists. If not, make the imprint area path with
 **no** fill and a '**NO PRINT BLACK!**' stroke at **0.5 pt** and using
 the **Dotted** stroke style. Lastly, with the path still selected, go to
-:guilabel:`Object` -> :guilabel:`Content` -> :guilabel:`Graphic`. Now, if it needs to be on
+:menuselection:`Object --> Content --> Graphic`. Now, if it needs to be on
 other layers (e.g., a non-Digital product, or one that has been scaled
 on the first page), we need to create an InCopy file of the imprint
 area. So before copying it to other layers, right-click on the path and
