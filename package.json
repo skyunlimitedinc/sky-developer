@@ -1,0 +1,29 @@
+{
+  "name": "sky-developer",
+  "version": "1.0.0",
+  "description": "Responsibilities and Instructions for the Developer",
+  "main": "docs/_build/html/index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/skyunlimitedinc/sky-developer.git"
+  },
+  "keywords": [
+    "docs",
+    "restructuredtext",
+    "rst",
+    "sphinx",
+    "readthedocs"
+  ],
+  "author": "Chris McGee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyunlimitedinc/sky-developer/issues"
+  },
+  "homepage": "https://github.com/skyunlimitedinc/sky-developer#readme"
+}
