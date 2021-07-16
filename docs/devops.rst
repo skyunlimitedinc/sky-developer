@@ -46,7 +46,7 @@ Every Friday
 ~~~~~~~~~~~~
 
 Sometime during the last day of the week, run the psshutdown routines
-as :ref:`outlined below. <shutdown>`.
+as :ref:`outlined below <shutdown>`.
 
 Monthly
 ~~~~~~~
