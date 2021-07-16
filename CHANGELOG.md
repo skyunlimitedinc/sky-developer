@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="1.2.0"></a>
+## 1.2.0 (2021-07-16)
+
+### Added
+
+- ✨ Adds scheduled tasks to DevOps [[cc5c767](https://github.com/skyunlimitedinc/sky-developer/commit/cc5c767896adea89342be863530f7dfc4a6876a6)]
+
+### Fixed
+
+- ✏️ Minor typo fix. [[bbb7215](https://github.com/skyunlimitedinc/sky-developer/commit/bbb7215360b1d84ed01069d3fbd3cef7d3dc45ce)]
+
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2021-07-16)
 
