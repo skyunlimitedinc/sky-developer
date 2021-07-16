@@ -4,12 +4,31 @@ Websites
 In addition to managing our internal scripts, there are several websites
 that must be managed, both private and public.
 
+Development
+-----------
+
 Since websites do not interact with Adobe products, I work on them
 through WSL, so I will be using Linux directory notation. As noted
 earlier in this document, all websites are stored locally at
 :file:`~/sites/`. This is just a symbolic link to a Windows directory
 (:file:`C:\\Users\\christopher.mcgee\\Sites\\`), but as I have said before, I
 prefer to work under WSL when I can.
+
+Workflow
+~~~~~~~~
+
+When developing locally, there are three 'layers' of testing to go through.
+Four, if you count the actual production server to be a test as well.
+
+1. Develop and :ref:`test locally<testing-locally>`
+2. Create Docker image and test
+3. Push Docker image to hub, update SkyUbuntu, and test there
+4. Push all commits to upstream and make sure the CI succeeds
+
+The next subsections detail each step.
+
+CI/CD
+~~~~~
 
 When/if any changes must be made to the AA, ACS, or AYS sites, be aware
 that I have a CD pipeline in place. Specifically, I have a GitHub Action
@@ -29,6 +48,137 @@ add ``[skip ci]`` to the comment of each commit you make. This will skip
 the GitHub Action that pushes the code up to the server. Better yet,
 create a local branch and do all of your work there and test it before
 merging it back into ``main`` and pushing to upstream.
+
+.. _testing-locally:
+
+Testing Locally
+~~~~~~~~~~~~~~~
+
+The first 'layer' of test is during active development on the code in your
+favorite IDE. In this layer, run :program:`Laragon`. It is already set up
+to run Apache on port 80. Make certain that the **haproxy** load balancer
+isn't running if you're going to test on this 'layer', since it also listens
+on port 80:
+
+.. code-block:: bash
+
+    docker container stop balancer
+
+Laragon is set up to monitor everything in :file:`C:\\Users\\christopher.mcgee\\Sites\\` and
+give them the hostname of the folder, followed by ``.test``. So if you wanted
+to test the latest version of the American Cabin Supply site, which is in the
+folder :file:`C:\\Users\\christopher.mcgee\\Sites\\acs`, then you should point your browser
+to `<http://acs.test/>`__.
+
+Docker Structure
+~~~~~~~~~~~~~~~~
+
+The second 'layer' of development and testing is in a Docker container. For
+this, I'll assume you already know how to use Docker. If not, go take some
+classes, watch some videos, and follow some tutorials. Then come back here.
+
+Feel free to study the ``docker-compose.yml`` file in the :file:`~/web/`
+directory to get an idea of how our Docker containers are structured. In
+a nutshell, a balancer directs all traffic from 80 and 443 to the appropriate
+service based on the hostname. ``acs`` and ``ays`` both use the ``acsays-db``
+service which, in turn stores the db info in the Docker volume ``acsays-dbdata``.
+Similarly, ``schedule`` uses the ``schedule-db`` service which stores data
+in ``schedule-dbdata``. All three of those sites leverage the ``redis`` service
+to handle caching in memory. Its data is stored in ``redis-data``,
+unsurprisingly.
+
+``aa`` doesn't use a database nor caching because it's a static html/css site,
+so it stands alone. Both the ``acsays-db`` and ``schedule-db`` databases are
+backed up weekly using the ``sqlbak`` service, which uses the volumes
+``sqlbak-data`` for storing settings and ``sqlbak-backups`` for the actual
+backups. (There are plenty of other backup processes going on, as well, such
+as **Plesk**'s built-in backup and **DigitalOcean**'s regular backups.) Lastly,
+all of the services are running on the same virtual network, ``web``, to make
+managing them easier.
+
+Building the Docker Image
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Assuming you'ver already updated the version number of the service in your
+:file:`docker-compose.yml` file, you're ready to build the docker image, so run
+
+.. code-block:: bash
+
+    docker-compose build <name>
+
+where ``<name>`` is the name of the service to build. It is typically one of
+``acs``, ``ays``, ``www-aa``, or ``schedule``.
+
+.. note::
+
+    Make sure you are in the development directory for the site before running
+    the ``docker-compose`` command.
+
+Then you'll want to remove the existing container and image for the service
+
+.. code-block:: bash
+
+    docker container rm -f <name>
+    docker image rm <full name of old version>
+
+Then redirect the ``latest`` image to the new version you just recently created.
+
+.. code-block:: bash
+
+    docker image tag <full name of new version> <full name with ':latest'>
+
+Finally, push these up to Docker Hub
+
+.. code-block:: bash
+
+    docker image push <full name of new version>
+    docker image push <full name with ':latest'>
+
+Local Docker Testing
+~~~~~~~~~~~~~~~~~~~~
+
+To test these containers, you'll need to shut down Laragon's Apache server if
+it's running, then run the main ansible playbook locally:
+
+.. code-block:: bash
+
+    cd ~/devops
+    ansible-playbook main.yml --limit local
+
+Once that's done, you should be able to navigate to ``http://<service>-local/``
+in a browser, where ``<service>`` is the name of the site: ``acs``, ``ays``,
+``aa``, or ``schedule``.
+
+SkyUbuntu Docker Testing
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the third 'layer', you'll need to run the same playbook, but for SkyUbuntu
+only:
+
+.. code-block:: bash
+
+    cd ~/devops
+    ansible-playbook main.yml --limit staging
+
+Pushing to Production
+~~~~~~~~~~~~~~~~~~~~~
+
+Once everything has been tested exhaustively, it's time to push to upstream
+and hope that the CI pipeline will succeed.
+
+.. code-block:: bash
+
+    git push
+
+.. note::
+
+    Again, make sure you are in the directory for that site/service before
+    running this command. Also, I highly recommend tagging commits
+    appropriately and even drafting releases, just for posterity, if nothing
+    else.
+
+You can check on the CI pipeline by visiting the **Actions** section of
+the GitHub repo for that site.
 
 .. _american-accents:
 
