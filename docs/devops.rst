@@ -5,8 +5,69 @@ There are quite a few servers that need to be managed, both on-site and
 in the cloud. This section should help to give an overview of them and
 how to manage them.
 
+IT Schedule
+-----------
+
+Things need to be managed on a regular bases, so here's a rough guide
+for what needs to be done and when.
+
+Every Wednesday
+~~~~~~~~~~~~~~~
+
+Shortly before the end of the day on Wednesday, make sure all of the
+Art Department PCs are turned on, including the **SkyUnl125** PC that
+is in the photography room. Then kindly ask all of the artists to make
+sure to close out of all **Adobe** programs (including **Creative Cloud**)
+so that they will get updated overnight.
+
+This process is :ref:`detailed below <adobe-rum>`. You'll mostly just
+want to run the following right before everyone leaves.
+
+.. code-block:: powershell
+
+    cd ~\Documents
+    .\AdobeDownload.ps1
+
+If, the following day, the output from that command shows that any of
+the PCs didn't get updated, then you'll have to try again that night or
+just kindly ask the person whose PC didn't update if they can close their
+Adobe apps for a few minutes while you update them manually with
+
+.. code-block:: powershell
+
+    cd ~\Documents
+    .\Adobe-<PC name>.ps1
+
+If you forget to do these things on Wednesday evening, no worries; just
+try to remember to do so again on the next day, Thursday evening.
+Failing that, just do it next week.
+
+Every Friday
+~~~~~~~~~~~~
+
+Sometime during the last day of the week, run the psshutdown routines
+as :ref:`outlined below. <shutdown>`.
+
+Monthly
+~~~~~~~
+
+You should periodically update the installed packages on all the servers.
+It doesn't have to be on a monthly basis; it could be weekly or just
+when you have some free time. The details can be found :ref:`below <updating-packages>`,
+but here's the command to run in WSL, just for quick reference:
+
+.. code-block:: bash
+
+    cd ~/devops
+    ansible-playbook update-packages.yml
+
 IT Directory
 ------------
+
+On the server is a directory by the name of :file:`\\\\skyfs\\ArtDept\\IT\\`.
+This contains files for managing software and hardware across all of Sky
+Unlimited, Inc. Below is a breakdown of what you can find in this
+directory.
 
 +---------------------------------+------------------------------------------------------------------------------------------------+
 | Directory name                  | Description                                                                                    |
@@ -169,6 +230,8 @@ that, **Github Actions** is set up to watch any pushes to the ``main``
 branches of their respective repositories and transfer them
 automatically to the droplets.
 
+.. _updating-packages:
+
 Updating Packages
 ~~~~~~~~~~~~~~~~~
 
@@ -294,6 +357,8 @@ In :file:`C:\\Users\\christopher.mcgee\\Documents\\` are a number of :file:`*.ps
 files that are used to make it easy to manage the computers at Sky
 Unlimited, Inc.
 
+.. _adobe-rum:
+
 Adobe RUM
 ~~~~~~~~~
 
@@ -340,6 +405,8 @@ reason:
 .. code:: powershell
 
     Adobe-Kill-Navajo.ps1
+
+.. _shutdown:
 
 End-of-Week Shutdown
 ~~~~~~~~~~~~~~~~~~~~

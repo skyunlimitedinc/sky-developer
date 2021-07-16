@@ -99,28 +99,34 @@
 <li class="toctree-l1"><a class="reference internal" href="templates.html">4. Templates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="websites.html">5. Websites</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. DevOps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#it-directory">6.1. IT Directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ansible">6.2. Ansible</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#updating-sites-on-staging-server">6.2.1. Updating Sites on Staging Server</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#manage-staging-servers">6.2.1.1. Manage Staging Servers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#manage-sky-schedule">6.2.1.2. Manage Sky Schedule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#it-schedule">6.1. IT Schedule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#every-wednesday">6.1.1. Every Wednesday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#every-friday">6.1.2. Every Friday</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#monthly">6.1.3. Monthly</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#managing-production-servers-on-digitalocean">6.2.2. Managing Production Servers on <strong>DigitalOcean</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#updating-packages">6.2.3. Updating Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#updating-the-databases">6.2.4. Updating the Databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#it-directory">6.2. IT Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ansible">6.3. Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#updating-sites-on-staging-server">6.3.1. Updating Sites on Staging Server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#manage-staging-servers">6.3.1.1. Manage Staging Servers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manage-sky-schedule">6.3.1.2. Manage Sky Schedule</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#plesk-wordpress">6.3. Plesk &amp; WordPress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#databases">6.4. Databases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sky">6.4.1. sky</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sky-schedule">6.4.2. sky-schedule</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#logins">6.4.3. Logins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-production-servers-on-digitalocean">6.3.2. Managing Production Servers on <strong>DigitalOcean</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-packages">6.3.3. Updating Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-the-databases">6.3.4. Updating the Databases</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#powershell-automations">6.5. PowerShell automations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#adobe-rum">6.5.1. Adobe RUM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#end-of-week-shutdown">6.5.2. End-of-Week Shutdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plesk-wordpress">6.4. Plesk &amp; WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#databases">6.5. Databases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sky">6.5.1. sky</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sky-schedule">6.5.2. sky-schedule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logins">6.5.3. Logins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#powershell-automations">6.6. PowerShell automations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adobe-rum">6.6.1. Adobe RUM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#end-of-week-shutdown">6.6.2. End-of-Week Shutdown</a></li>
 </ul>
 </li>
 </ul>
@@ -198,8 +204,58 @@
 <p>There are quite a few servers that need to be managed, both on-site and
 in the cloud. This section should help to give an overview of them and
 how to manage them.</p>
+<div class="section" id="it-schedule">
+<h2><span class="section-number">6.1. </span>IT Schedule<a class="headerlink" href="#it-schedule" title="Permalink to this headline">¶</a></h2>
+<p>Things need to be managed on a regular bases, so here’s a rough guide
+for what needs to be done and when.</p>
+<div class="section" id="every-wednesday">
+<h3><span class="section-number">6.1.1. </span>Every Wednesday<a class="headerlink" href="#every-wednesday" title="Permalink to this headline">¶</a></h3>
+<p>Shortly before the end of the day on Wednesday, make sure all of the
+Art Department PCs are turned on, including the <strong>SkyUnl125</strong> PC that
+is in the photography room. Then kindly ask all of the artists to make
+sure to close out of all <strong>Adobe</strong> programs (including <strong>Creative Cloud</strong>)
+so that they will get updated overnight.</p>
+<p>This process is <a class="reference internal" href="#adobe-rum"><span class="std std-ref">detailed below</span></a>. You’ll mostly just
+want to run the following right before everyone leaves.</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="p">~\</span><span class="n">Documents</span>
+<span class="p">.\</span><span class="n">AdobeDownload</span><span class="p">.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<p>If, the following day, the output from that command shows that any of
+the PCs didn’t get updated, then you’ll have to try again that night or
+just kindly ask the person whose PC didn’t update if they can close their
+Adobe apps for a few minutes while you update them manually with</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd </span><span class="p">~\</span><span class="n">Documents</span>
+<span class="p">.\</span><span class="n">Adobe</span><span class="p">-&lt;</span><span class="n">PC</span> <span class="n">name</span><span class="p">&gt;.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+<p>If you forget to do these things on Wednesday evening, no worries; just
+try to remember to do so again on the next day, Thursday evening.
+Failing that, just do it next week.</p>
+</div>
+<div class="section" id="every-friday">
+<h3><span class="section-number">6.1.2. </span>Every Friday<a class="headerlink" href="#every-friday" title="Permalink to this headline">¶</a></h3>
+<p>Sometime during the last day of the week, run the psshutdown routines
+as <a class="reference internal" href="#shutdown"><span class="std std-ref">outlined below.</span></a>.</p>
+</div>
+<div class="section" id="monthly">
+<h3><span class="section-number">6.1.3. </span>Monthly<a class="headerlink" href="#monthly" title="Permalink to this headline">¶</a></h3>
+<p>You should periodically update the installed packages on all the servers.
+It doesn’t have to be on a monthly basis; it could be weekly or just
+when you have some free time. The details can be found <a class="reference internal" href="#updating-packages"><span class="std std-ref">below</span></a>,
+but here’s the command to run in WSL, just for quick reference:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/devops
+ansible-playbook update-packages.yml
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="it-directory">
-<h2><span class="section-number">6.1. </span>IT Directory<a class="headerlink" href="#it-directory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>IT Directory<a class="headerlink" href="#it-directory" title="Permalink to this headline">¶</a></h2>
+<p>On the server is a directory by the name of <code class="file docutils literal notranslate"><span class="pre">\skyfs\ArtDept\IT\</span></code>.
+This contains files for managing software and hardware across all of Sky
+Unlimited, Inc. Below is a breakdown of what you can find in this
+directory.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 26%" />
@@ -293,7 +349,7 @@ how to manage them.</p>
 </table>
 </div>
 <div class="section" id="ansible">
-<span id="ansible1"></span><h2><span class="section-number">6.2. </span>Ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
+<span id="ansible1"></span><h2><span class="section-number">6.3. </span>Ansible<a class="headerlink" href="#ansible" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/skyunlimitedinc/sky-devops">repo</a></p>
 <p>To help manage the servers we have, I use
 <a class="reference external" href="https://www.ansible.com/">Ansible</a>. It is all run from the
@@ -302,7 +358,7 @@ and it can be confusing to follow what does what, so hopefully the
 following instructions (along with the project’s <code class="file docutils literal notranslate"><span class="pre">README.md</span></code>) will help to
 clarify how to use it.</p>
 <div class="section" id="updating-sites-on-staging-server">
-<h3><span class="section-number">6.2.1. </span>Updating Sites on Staging Server<a class="headerlink" href="#updating-sites-on-staging-server" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>Updating Sites on Staging Server<a class="headerlink" href="#updating-sites-on-staging-server" title="Permalink to this headline">¶</a></h3>
 <p>Although our staging server, <strong>skyubuntu</strong>, is slated to be removed as
 soon as possible, it is still being actively used for our <a class="reference external" href="https://github.com/skyunlimitedinc/sky-schedule">Sky
 Schedule</a> app.</p>
@@ -331,7 +387,7 @@ run the docker containers necessary to keep the sites/apps running
 smoothly. This includes running <strong>HAProxy</strong> to act as a proxy rather
 than a load balancer for the sites/apps.</p>
 <div class="section" id="manage-staging-servers">
-<span id="id1"></span><h4><span class="section-number">6.2.1.1. </span>Manage Staging Servers<a class="headerlink" href="#manage-staging-servers" title="Permalink to this headline">¶</a></h4>
+<span id="id1"></span><h4><span class="section-number">6.3.1.1. </span>Manage Staging Servers<a class="headerlink" href="#manage-staging-servers" title="Permalink to this headline">¶</a></h4>
 <p>To provision and launch the staging sites on SkyUbuntu, run the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook playbooks/&lt;server_name&gt;.yml
 </pre></div>
@@ -341,7 +397,7 @@ Cabin Supply</a> and <a class="reference external" href="https://github.com/skyu
 Yacht Supply</a>, respectively).</p>
 </div>
 <div class="section" id="manage-sky-schedule">
-<span id="id2"></span><h4><span class="section-number">6.2.1.2. </span>Manage Sky Schedule<a class="headerlink" href="#manage-sky-schedule" title="Permalink to this headline">¶</a></h4>
+<span id="id2"></span><h4><span class="section-number">6.3.1.2. </span>Manage Sky Schedule<a class="headerlink" href="#manage-sky-schedule" title="Permalink to this headline">¶</a></h4>
 <p>To provision and launch the Sky Schedule web app on SkyUbuntu, run the
 command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook playbooks/schedule.yml
@@ -357,7 +413,7 @@ servers and Sky Schedule at once.</p>
 </div>
 </div>
 <div class="section" id="managing-production-servers-on-digitalocean">
-<h3><span class="section-number">6.2.2. </span>Managing Production Servers on <strong>DigitalOcean</strong><a class="headerlink" href="#managing-production-servers-on-digitalocean" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>Managing Production Servers on <strong>DigitalOcean</strong><a class="headerlink" href="#managing-production-servers-on-digitalocean" title="Permalink to this headline">¶</a></h3>
 <p>To provision the production droplets on <strong>DigitalOcean</strong>, run the
 command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook <span class="k">do</span>-prep.yml
@@ -371,7 +427,7 @@ branches of their respective repositories and transfer them
 automatically to the droplets.</p>
 </div>
 <div class="section" id="updating-packages">
-<h3><span class="section-number">6.2.3. </span>Updating Packages<a class="headerlink" href="#updating-packages" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3><span class="section-number">6.3.3. </span>Updating Packages<a class="headerlink" href="#updating-packages" title="Permalink to this headline">¶</a></h3>
 <p>As a part of regular maintenance, upgrade the packages and reboot the
 servers as necessary with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ansible-playbook update-packages.yml
@@ -381,7 +437,7 @@ servers as necessary with</p>
 the hosts on DigitalOcean.</p>
 </div>
 <div class="section" id="updating-the-databases">
-<h3><span class="section-number">6.2.4. </span>Updating the Databases<a class="headerlink" href="#updating-the-databases" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.4. </span>Updating the Databases<a class="headerlink" href="#updating-the-databases" title="Permalink to this headline">¶</a></h3>
 <p>If you just want to update the databases on the staging server or local
 machine, then you’ll want to execute the <code class="file docutils literal notranslate"><span class="pre">db-init.yml</span></code> playbook along
 with two variables:</p>
@@ -415,7 +471,7 @@ time.</p>
 </div>
 </div>
 <div class="section" id="plesk-wordpress">
-<h2><span class="section-number">6.3. </span>Plesk &amp; WordPress<a class="headerlink" href="#plesk-wordpress" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Plesk &amp; WordPress<a class="headerlink" href="#plesk-wordpress" title="Permalink to this headline">¶</a></h2>
 <p>The sign-in credentials for these should be included with the exported
 credentials list from 1Password. I highly recommend creating a new user
 for the American Accents WordPress site and perhaps even one for Plesk,
@@ -425,12 +481,12 @@ how to use them as there is far too much to write about here and they
 would do a better job than I.</p>
 </div>
 <div class="section" id="databases">
-<h2><span class="section-number">6.4. </span>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Databases<a class="headerlink" href="#databases" title="Permalink to this headline">¶</a></h2>
 <p>We currently use two databases, <code class="docutils literal notranslate"><span class="pre">sky</span></code> and <code class="docutils literal notranslate"><span class="pre">sky-schedule</span></code>. <code class="docutils literal notranslate"><span class="pre">sky</span></code> is
 used by the American Cabin Supply and American Yacht Supply websites
 while <code class="docutils literal notranslate"><span class="pre">sky-schedule</span></code> is used solely by Sky Schedule.</p>
 <div class="section" id="sky">
-<h3><span class="section-number">6.4.1. </span>sky<a class="headerlink" href="#sky" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.1. </span>sky<a class="headerlink" href="#sky" title="Permalink to this headline">¶</a></h3>
 <p>This database has not been updated for a couple of years or so and
 likely will not need to be updated until Shawn declares that the ACS and
 AYS sites need updating. The table structure is far too complex to
@@ -446,7 +502,7 @@ the data for it is stored in the Docker volume <code class="docutils literal not
 site.</p>
 </div>
 <div class="section" id="sky-schedule">
-<h3><span class="section-number">6.4.2. </span>sky-schedule<a class="headerlink" href="#sky-schedule" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.2. </span>sky-schedule<a class="headerlink" href="#sky-schedule" title="Permalink to this headline">¶</a></h3>
 <p>The Sky Schedule database is in constant use on the <strong>skyubuntu</strong>
 server. The Art Department PCs are always accessing and writing data to
 it whenever a Proof or Output job is run. The Production and Customer
@@ -462,7 +518,7 @@ to find it fully working. It’s running in a Docker container called
 <code class="docutils literal notranslate"><span class="pre">schedule-dbdata</span></code>.</p>
 </div>
 <div class="section" id="logins">
-<h3><span class="section-number">6.4.3. </span>Logins<a class="headerlink" href="#logins" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.3. </span>Logins<a class="headerlink" href="#logins" title="Permalink to this headline">¶</a></h3>
 <p>The login information on <strong>DigitalOcean</strong> can be easily retrieved there
 and reset as necessary, but the passwords cannot be modified. On
 <strong>skyubuntu</strong>, however, the passwords are very simple because they were
@@ -506,12 +562,12 @@ apps.</p>
 </div>
 </div>
 <div class="section" id="powershell-automations">
-<h2><span class="section-number">6.5. </span>PowerShell automations<a class="headerlink" href="#powershell-automations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6. </span>PowerShell automations<a class="headerlink" href="#powershell-automations" title="Permalink to this headline">¶</a></h2>
 <p>In <code class="file docutils literal notranslate"><span class="pre">C:\Users\christopher.mcgee\Documents\</span></code> are a number of <code class="file docutils literal notranslate"><span class="pre">*.ps1</span></code>
 files that are used to make it easy to manage the computers at Sky
 Unlimited, Inc.</p>
 <div class="section" id="adobe-rum">
-<h3><span class="section-number">6.5.1. </span>Adobe RUM<a class="headerlink" href="#adobe-rum" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3><span class="section-number">6.6.1. </span>Adobe RUM<a class="headerlink" href="#adobe-rum" title="Permalink to this headline">¶</a></h3>
 <p>Sadly, it’s not alcoholic. <strong>RUM</strong> is Adobe’s updating software,
 <strong>Remote Update Manager</strong>. It is automatically installed on any computer
 that has at least one piece of Adobe software installed. We use it to
@@ -547,7 +603,7 @@ reason:</p>
 </div>
 </div>
 <div class="section" id="end-of-week-shutdown">
-<h3><span class="section-number">6.5.2. </span>End-of-Week Shutdown<a class="headerlink" href="#end-of-week-shutdown" title="Permalink to this headline">¶</a></h3>
+<span id="shutdown"></span><h3><span class="section-number">6.6.2. </span>End-of-Week Shutdown<a class="headerlink" href="#end-of-week-shutdown" title="Permalink to this headline">¶</a></h3>
 <p>Since we typically shut down all of our Art Department PCs at the end of
 every week, there’s a command to remotely handle that, as well:
 <strong class="program">psshutdown</strong>. Sorry, no script here. This can be left as an exercise
