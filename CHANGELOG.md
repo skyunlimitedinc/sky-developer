@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="1.1.0"></a>
+## 1.1.0 (2021-07-16)
+
+### Miscellaneous
+
+- 📝 Adds development notes for the web sites [[54821fe](https://github.com/skyunlimitedinc/sky-developer/commit/54821feac4eaf5b7f92799cc48108e6dc18a08dc)]
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 (2021-07-14)
 
